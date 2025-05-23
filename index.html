@@ -1267,7 +1267,7 @@
                         <div class="contact-inner">
                             <div
                                 class="section-head section-head-one-side text-align-left tmp-scroll-trigger tmp-fade-in animation-order-1">
-                                <span class="title-left">Get Ready To Create Great</span>
+                                <span class="title-left">Get Ready To Create The Great</span>
                             </div>
                             <ul class="ft-link v2">
                                  <li class="tmp-scroll-trigger tmp-fade-in animation-order-3 tmp-link-animation">
@@ -1314,8 +1314,8 @@
 
                                         <div class="col-lg-6">
                                             <div class="form-group">
-                                                <input class="input-field" name="phone" id="contact-phone"
-                                                    placeholder="Phone Number" type="number" required>
+                                                <input class="input-field"  type="tel" name="phone" id="contact-phone" inputmode="numeric" oninput="this.value = this.value.replace(/[^0-9]/g, '')" 
+                                                    placeholder="Phone Number" type="number" required pattern="[0-9]{10}" maxlength="10">
                                             </div>
                                         </div>
 

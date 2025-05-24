@@ -29729,4 +29729,8 @@ body.tmp-white-version.color-primary-3rd .services-widget.v2 .active-bg {
 }
 /*# sourceMappingURL=../maps/style.css.map */
 
-
+/* For consistent styling */
+.tmp-btn[disabled] {
+    cursor: not-allowed;
+    opacity: 0.9;
+}

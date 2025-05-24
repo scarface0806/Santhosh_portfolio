@@ -991,35 +991,38 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 // form
-document.getElementById('contact-form').addEventListener('submit', function (e) {
-            e.preventDefault();
-            const form = e.target;
-            const submitBtn = document.getElementById('submit');
+ 
 
-            // Disable button to prevent multiple submissions
-            submitBtn.disabled = true;
-            submitBtn.querySelector('.btn-text').textContent = 'Sending...';
-
-            // Create hidden iframe for target
-            const iframe = document.createElement('iframe');
-            iframe.name = 'form-iframe';
-            iframe.style.display = 'none';
-            form.target = 'form-iframe';
-            document.body.appendChild(iframe);
-
-            // Submit form
-            form.submit();
-
-            // Show success message
-            setTimeout(() => {
-                alert('Thank you! Your message has been sent.');
-                form.reset();
-                submitBtn.disabled = false;
-                submitBtn.querySelector('.btn-text').textContent = 'Send Now';
-                document.body.removeChild(iframe);
-            }, 1500);
+    document.getElementById('contact-form').addEventListener('submit', function(e) {
+        e.preventDefault();
+        const form = e.target;
+        const submitBtn = document.getElementById('submit');
+        const btnText = submitBtn.querySelector('.btn-text');
+        
+        // Immediately change button to green "Submitted" state
+        submitBtn.disabled = true;
+        submitBtn.style.backgroundColor = '#3EB75E'; // Green color
+        submitBtn.style.borderColor = '#3EB75E'; // Green color
+        btnText.textContent = 'Sent successfully';
+        
+        // Change icon colors to white if needed
+        const icons = submitBtn.querySelectorAll('.btn-icon');
+        icons.forEach(icon => {
+            icon.style.color = '#ffffff';
         });
 
+        // Create hidden iframe for submission
+        const iframe = document.createElement('iframe');
+        iframe.name = 'form-iframe';
+        iframe.style.display = 'none';
+        form.target = 'form-iframe';
+        document.body.appendChild(iframe);
 
-        // Popup
-      
+        // Submit form
+        form.submit();
+
+        // Remove iframe after submission
+        setTimeout(() => {
+            document.body.removeChild(iframe);
+        }, 1500);
+    });

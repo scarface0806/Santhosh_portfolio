@@ -21404,7 +21404,7 @@ section.clients-testimonial-area {
   width: 55px;
   position: fixed;
   bottom: 20px;
-  left: 20px;
+  right: 20px;
   background-color: #0f0f0f;
   border-radius: 50%;
   overflow: hidden;

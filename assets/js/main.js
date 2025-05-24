@@ -990,4 +990,84 @@ document.addEventListener('DOMContentLoaded', function() {
   });
 });
 
+// form
+document.getElementById('contact-form').addEventListener('submit', function (e) {
+            e.preventDefault();
+            const form = e.target;
+            const submitBtn = document.getElementById('submit');
+
+            // Disable button to prevent multiple submissions
+            submitBtn.disabled = true;
+            submitBtn.querySelector('.btn-text').textContent = 'Sending...';
+
+            // Create hidden iframe for target
+            const iframe = document.createElement('iframe');
+            iframe.name = 'form-iframe';
+            iframe.style.display = 'none';
+            form.target = 'form-iframe';
+            document.body.appendChild(iframe);
+
+            // Submit form
+            form.submit();
+
+            // Show success message
+            setTimeout(() => {
+                alert('Thank you! Your message has been sent.');
+                form.reset();
+                submitBtn.disabled = false;
+                submitBtn.querySelector('.btn-text').textContent = 'Send Now';
+                document.body.removeChild(iframe);
+            }, 1500);
+        });
+
+
+        // Popup
+        document.addEventListener('DOMContentLoaded', function() {
+    const contactForm = document.getElementById('contact-form');
+    const notificationPopup = document.getElementById('notification-popup');
+    const closePopupBtn = document.getElementById('close-popup');
+    
+    if (contactForm) {
+        contactForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Get form data
+            const formData = new FormData(contactForm);
+            
+            // Submit to Google Forms
+            fetch(contactForm.action, {
+                method: 'POST',
+                body: formData,
+                mode: 'no-cors'
+            }).then(() => {
+                // Show success popup
+                notificationPopup.classList.add('active');
+                
+                // Reset form
+                contactForm.reset();
+            }).catch(error => {
+                console.error('Error:', error);
+                // Even if there's an error (due to no-cors), we'll show success to the user
+                notificationPopup.classList.add('active');
+                contactForm.reset();
+            });
+        });
+    }
+    
+    // Close popup when clicking the button
+    if (closePopupBtn) {
+        closePopupBtn.addEventListener('click', function() {
+            notificationPopup.classList.remove('active');
+        });
+    }
+    
+    // Close popup when clicking outside the content
+    if (notificationPopup) {
+        notificationPopup.addEventListener('click', function(e) {
+            if (e.target === notificationPopup) {
+                notificationPopup.classList.remove('active');
+            }
+        });
+    }
+});
 

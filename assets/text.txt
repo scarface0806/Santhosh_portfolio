@@ -12,3 +12,55 @@ entry.360074477
 entry.1611064618
 entry.966456936
 entry.1274539556
+
+
+
+  <div class="col-lg-6">
+                                            <div class="form-group">
+                                                <input class="input-field" name="entry.136316294" id="contact-name"
+                                                    placeholder="Your Name" type="text" required>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-lg-6">
+                                            <div class="form-group">
+                                                <input class="input-field" type="tel" name="entry.360074477"
+                                                    id="contact-phone" placeholder="Phone Number" required
+                                                    pattern="[0-9]{10}" maxlength="10"
+                                                    oninput="this.value = this.value.replace(/[^0-9]/g, '')">
+                                            </div>
+                                        </div>
+
+                                        <div class="col-lg-6">
+                                            <div class="form-group">
+                                                <input class="input-field" id="contact-email" name="entry.1611064618"
+                                                    placeholder="Your Email" type="email" required>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-lg-6">
+                                            <div class="form-group">
+                                                <input class="input-field" type="text" id="subject"
+                                                    name="entry.966456936" placeholder="Subject">
+                                            </div>
+                                        </div>
+
+                                        <div class="col-lg-12">
+                                            <div class="form-group">
+                                                <textarea class="input-field" placeholder="Your Message"
+                                                    name="entry.1274539556" id="contact-message" required></textarea>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-lg-12">
+                                            <div class="tmp-button-here">
+                                                <button class="tmp-btn hover-icon-reverse radius-round w-100"
+                                                    type="submit" id="submit">
+                                                    <span class="icon-reverse-wrapper">
+                                                        <span class="btn-text">Send Now</span>
+                                                        <span class="btn-icon"><i class="fas fa-arrow-right"></i></span>
+                                                        <span class="btn-icon"><i class="fas fa-arrow-right"></i></span>
+                                                    </span>
+                                                </button>
+                                            </div>
+                                        </div>

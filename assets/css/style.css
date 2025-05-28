@@ -22418,7 +22418,8 @@ body.loaded {
   justify-content: center;
   position: relative;
   box-shadow: var(--shadow-1);
-}
+  filter: none; 
+  }
 .my-skill-card .card-icon::before {
   content: "";
   position: absolute;
@@ -22442,8 +22443,8 @@ body.loaded {
   z-index: -1;
 }
 .my-skill-card .card-icon img {
-  max-height: 32px;
-  filter: invert(1);
+  max-height: 70px;
+  /* filter: invert(1); */
 }
 .my-skill-card .main-title {
   color: var(--color-heading);
@@ -29733,4 +29734,12 @@ body.tmp-white-version.color-primary-3rd .services-widget.v2 .active-bg {
 .tmp-btn[disabled] {
     cursor: not-allowed;
     opacity: 0.9;
+}
+
+
+.Skill-icon-image{
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  align-self: center;
 }
